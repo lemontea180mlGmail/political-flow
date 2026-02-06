@@ -128,7 +128,7 @@ export default function App() {
                 <button
                   onClick={() => {
                     if (currentResult) {
-                      const text = `だれでも簡単、最短5秒で投票先診断\n私の考えに近いのは【${currentResult.title}】でした！\n#選挙`;
+                      const text = `だれでも簡単、最短5秒で投票先診断\n私の考えに近いのは【${currentResult.title}】でした！\n#選挙に行こう\n`;
                       const url = window.location.href;
                       window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
                     }
