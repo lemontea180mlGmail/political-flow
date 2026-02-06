@@ -200,7 +200,7 @@ export default function App() {
         </AnimatePresence>
 
         <footer className="mt-12 text-center text-slate-600 text-sm">
-          v0.9.1
+          v0.9.3
         </footer>
       </div>
     </div>
