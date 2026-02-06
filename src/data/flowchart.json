@@ -1,0 +1,215 @@
+{
+    "title": "政治志向診断フローチャート",
+    "description": "あなたの考えに近い政党を診断します。",
+    "startNodeId": "q1",
+    "nodes": {
+        "q1": {
+            "question": "統一教会の信者である(もしくは関連団体)",
+            "options": [
+                {
+                    "label": "はい",
+                    "resultId": "ldp"
+                },
+                {
+                    "label": "いいえ",
+                    "nextNodeId": "q2"
+                }
+            ]
+        },
+        "q2": {
+            "question": "別に政治家はお金に汚くだらしなくても問題ない",
+            "options": [
+                {
+                    "label": "はい",
+                    "resultId": "ldp"
+                },
+                {
+                    "label": "いいえ",
+                    "nextNodeId": "q3"
+                }
+            ]
+        },
+        "q3": {
+            "question": "大阪の副首都構想が一番大事な政策である",
+            "options": [
+                {
+                    "label": "はい",
+                    "resultId": "ishin"
+                },
+                {
+                    "label": "いいえ",
+                    "nextNodeId": "q4"
+                }
+            ]
+        },
+        "q4": {
+            "question": "具体性と実現性を大事にして手取りを増やすことが一番大事だ",
+            "options": [
+                {
+                    "label": "はい",
+                    "resultId": "kokumin"
+                },
+                {
+                    "label": "いいえ",
+                    "nextNodeId": "q5"
+                }
+            ]
+        },
+        "q5": {
+            "question": "外国人政策が一番大事だ",
+            "options": [
+                {
+                    "label": "はい",
+                    "nextNodeId": "q6"
+                },
+                {
+                    "label": "いいえ",
+                    "nextNodeId": "q7"
+                }
+            ]
+        },
+        "q6": {
+            "question": "移民は1人もいらない",
+            "options": [
+                {
+                    "label": "はい",
+                    "resultId": "hoshu"
+                },
+                {
+                    "label": "いいえ",
+                    "resultId": "sansei"
+                }
+            ]
+        },
+        "q7": {
+            "question": "創価学会の信者である",
+            "options": [
+                {
+                    "label": "はい",
+                    "resultId": "chudo"
+                },
+                {
+                    "label": "いいえ",
+                    "nextNodeId": "q8"
+                }
+            ]
+        },
+        "q8": {
+            "question": "夫婦別姓の導入や、徹底した平和主義・護憲が大事だ",
+            "options": [
+                {
+                    "label": "はい",
+                    "resultId": "chudo"
+                },
+                {
+                    "label": "いいえ",
+                    "nextNodeId": "q9"
+                }
+            ]
+        },
+        "q9": {
+            "question": "消費税を将来的にでも0％にしてほしい",
+            "options": [
+                {
+                    "label": "はい",
+                    "nextNodeId": "q10"
+                },
+                {
+                    "label": "いいえ",
+                    "nextNodeId": "q11"
+                }
+            ]
+        },
+        "q10": {
+            "question": "今すぐ消費税は0％にするべきだ",
+            "options": [
+                {
+                    "label": "はい",
+                    "resultId": "reiwa"
+                },
+                {
+                    "label": "いいえ",
+                    "nextNodeId": "q11"
+                }
+            ]
+        },
+        "q11": {
+            "question": "政治にデジタル技術をフル活用し、効率的な社会を実現することが一番大事だ",
+            "options": [
+                {
+                    "label": "はい",
+                    "resultId": "mirai"
+                },
+                {
+                    "label": "いいえ",
+                    "nextNodeId": "q12"
+                }
+            ]
+        },
+        "q12": {
+            "question": "私の生活は幸せです",
+            "options": [
+                {
+                    "label": "はい",
+                    "resultId": "yoto"
+                },
+                {
+                    "label": "いいえ",
+                    "resultId": "yato"
+                }
+            ]
+        }
+    },
+    "results": {
+        "ldp": {
+            "title": "自由民主党 (自民党)",
+            "description": "既存の体制や安定を重視するあなたには、自民党が適しているかもしれません。",
+            "color": "#ff0000"
+        },
+        "ishin": {
+            "title": "日本維新の会",
+            "description": "身を切る改革や地方分権、大阪の発展を重視するあなたには、日本維新の会がおすすめです。",
+            "color": "#009944"
+        },
+        "kokumin": {
+            "title": "国民民主党",
+            "description": "対決より解決、手取りを増やす経済政策を重視するあなたには、国民民主党が適しています。",
+            "color": "#fff100"
+        },
+        "hoshu": {
+            "title": "日本保守党",
+            "description": "日本の伝統や国益、厳しい移民政策を重視するあなたには、日本保守党が適しています。",
+            "color": "#000080"
+        },
+        "sansei": {
+            "title": "参政党",
+            "description": "独自の教育や食の安全、既存政党への批判的な視点を持つあなたには、参政党が適しています。",
+            "color": "#e67e22"
+        },
+        "chudo": {
+            "title": "中道改革連合 (公明・立憲民主党)",
+            "description": "平和主義や福祉、あるいは特定の団体との繋がりを重視する傾向があります。",
+            "color": "#f39c12"
+        },
+        "reiwa": {
+            "title": "れいわ新選組",
+            "description": "徹底した積極財政や消費税廃止を訴えるあなたには、れいわ新選組が適しています。",
+            "color": "#e91e63"
+        },
+        "mirai": {
+            "title": "チームみらい",
+            "description": "デジタルの活用や未来志向の効率化を重視するあなたには、チームみらいが適しています。",
+            "color": "#00bcd4"
+        },
+        "yoto": {
+            "title": "与党系",
+            "description": "与党のどれかから選ぼう。どれを選んでも今と変わらない生活を保つために努力します。",
+            "color": "#2c3e50"
+        },
+        "yato": {
+            "title": "野党系",
+            "description": "野党のどれかから選ぼう。どれを選んでもあなたが幸せになるように現状を変える努力する政党です。",
+            "color": "#7f8c8d"
+        }
+    }
+}
