@@ -128,7 +128,7 @@ export default function App() {
                 <button
                   onClick={() => {
                     if (currentResult) {
-                      const text = `だれでも簡単、最短5秒で投票先診断\n#選挙へ行こう`;
+                      const text = `だれでも簡単、最短5秒で投票先診断\n私の考えに近いのは【${currentResult.title}】でした！\n#選挙`;
                       const url = window.location.href;
                       window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
                     }
@@ -200,7 +200,7 @@ export default function App() {
         </AnimatePresence>
 
         <footer className="mt-12 text-center text-slate-600 text-sm">
-          v0.5.2
+          v0.9.1
         </footer>
       </div>
     </div>

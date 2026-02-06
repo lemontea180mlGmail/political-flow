@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political FlowChart - Perfect Alignment</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: "Sawarabi Gothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+            margin: 0;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .canvas {
+            width: 1000px;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0;
+        }
+
+        .q-text {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 0;
+            padding: 10px 0;
+        }
+
+        /* 垂直な中心線 */
+        .stem {
+            width: 1.5px;
+            height: 30px;
+            background-color: black;
+            margin-left: 30px;
+        }
+
+        /* はい の分岐ユニット */
+        .branch-unit {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            margin-left: 30px;
+            position: relative;
+        }
+
+        /* 子要素の垂直線を維持するための左ボーダー */
+        .branch-unit::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1.5px;
+            background-color: black;
+        }
+
+        .horizontal-line {
+            width: 30px;
+            height: 1.5px;
+            background-color: black;
+        }
+
+        .label-yes {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 0 10px;
+            white-space: nowrap;
+        }
+
+        .label-no {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px 0;
+            margin-left: 10px;
+        }
+
+        .arrow-text {
+            font-size: 12px;
+            padding-right: 15px;
+        }
+
+        .result-text {
+            font-size: 30px;
+            font-weight: 900;
+            white-space: nowrap;
+        }
+
+        /* 次の質問へ続く矢印 */
+        .stem-to-next {
+            width: 1.5px;
+            height: 40px;
+            background-color: black;
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .stem-to-next::after {
+            content: "▼";
+            position: absolute;
+            bottom: -8px;
+            left: -5.5px;
+            font-size: 10px;
+        }
+
+        /* 横に並べるコンテナ */
+        .flex-container {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        /* カラー設定 */
+        .ldp {
+            color: #ff0000;
+        }
+
+        .ishin {
+            color: #009944;
+        }
+
+        .kokumin {
+            color: #0054a6;
+        }
+
+        .chudo {
+            color: #f39c12;
+        }
+
+        .reiwa {
+            color: #e91e63;
+        }
+
+        .hoshu {
+            color: #000080;
+        }
+
+        .mirai {
+            color: #00bcd4;
+        }
+
+        .sansei {
+            color: #e67e22;
+        }
+
+        .final-box {
+            display: inline-block;
+            border: 2px solid black;
+            padding: 10px 25px;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="canvas">
+
+        <!-- Q1 -->
+        <div class="step">
+            <div class="q-text">Q1: 統一教会の信者である (もしくは関連団体)</div>
+            <div class="stem"></div>
+            <div class="branch-unit">
+                <div class="horizontal-line"></div>
+                <span class="label-yes">はい</span><span class="arrow-text">→</span><span
+                    class="result-text ldp">自民党</span>
+            </div>
+            <div class="stem"></div>
+            <div class="label-no">いいえ</div>
+            <div class="stem-to-next"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="step">
+            <div class="q-text">Q2: 別に政治家はお金に汚くだらしなくてもよい</div>
+            <div class="stem"></div>
+            <div class="branch-unit">
+                <div class="horizontal-line"></div>
+                <span class="label-yes">はい</span><span class="arrow-text">→</span><span
+                    class="result-text ldp">自民党</span>
+            </div>
+            <div class="stem"></div>
+            <div class="label-no">いいえ</div>
+            <div class="stem-to-next"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="step">
+            <div class="q-text">Q3: 大阪の副首都構想が一番大事な政策である</div>
+            <div class="stem"></div>
+            <div class="branch-unit">
+                <div class="horizontal-line"></div>
+                <span class="label-yes">はい</span><span class="arrow-text">→</span><span
+                    class="result-text ishin">日本維新の会</span>
+            </div>
+            <div class="stem"></div>
+            <div class="label-no">いいえ</div>
+            <div class="stem-to-next"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="step">
+            <div class="q-text">Q4: 具体性と実現性を大事にし手取りを増やす</div>
+            <div class="stem"></div>
+            <div class="branch-unit">
+                <div class="horizontal-line"></div>
+                <span class="label-yes">はい</span><span class="arrow-text">→</span><span
+                    class="result-text kokumin">国民民主党</span>
+            </div>
+            <div class="stem"></div>
+            <div class="label-no">いいえ</div>
+            <div class="stem-to-next"></div>
+        </div>
+
+        <!-- Q5 -> Q6 -->
+        <div class="step">
+            <div class="q-text">Q5: 外国人政策が一番大事だ</div>
+            <div class="stem"></div>
+            <div class="flex-container">
+                <div class="branch-unit" style="height: 180px; align-items: flex-start;">
+                    <div class="horizontal-line" style="margin-top: 20px;"></div>
+                    <span class="label-yes" style="margin-top: 12px;">はい</span><span class="arrow-text"
+                        style="margin-top: 12px;">→</span>
+
+                    <!-- Nested Q6 -->
+                    <div class="step" style="margin-top: 5px;">
+                        <div class="q-text" style="font-size: 16px; padding: 5px 0;">Q6: 移民は1人もいらない</div>
+                        <div class="stem" style="height: 20px; margin-left: 20px;"></div>
+                        <div class="branch-unit" style="margin-left: 20px;">
+                            <div class="horizontal-line"></div>
+                            <span class="label-yes">はい</span><span class="arrow-text">→</span><span
+                                class="result-text hoshu">日本保守党</span>
+                        </div>
+                        <div class="stem" style="height: 20px; margin-left: 20px;"></div>
+                        <div class="label-no" style="margin-left: 0; padding-left: 30px;">いいえ</div>
+                        <div class="stem" style="height: 20px; margin-left: 20px;"></div>
+                        <div class="branch-unit" style="margin-left: 20px; height: 30px; margin-top: -10px;">
+                            <div class="horizontal-line"></div><span class="arrow-text"
+                                style="margin-left: 10px;">→</span><span class="result-text sansei">参政党</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stem"></div>
+            <div class="label-no">いいえ</div>
+            <div class="stem-to-next"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="step">
+            <div class="q-text">Q7: 創価学会の信者である</div>
+            <div class="stem"></div>
+            <div class="branch-unit">
+                <div class="horizontal-line"></div>
+                <span class="label-yes">はい</span><span class="arrow-text">→</span><span
+                    class="result-text chudo">中道改革連合</span>
+            </div>
+            <div class="stem"></div>
+            <div class="label-no">いいえ</div>
+            <div class="stem-to-next"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="step">
+            <div class="q-text">Q8: 夫婦別姓の導入や、徹底した平和主義・護憲が大事だ</div>
+            <div class="stem"></div>
+            <div class="branch-unit">
+                <div class="horizontal-line"></div>
+                <span class="label-yes">はい</span><span class="arrow-text">→</span><span
+                    class="result-text chudo">中道改革連合</span>
+            </div>
+            <div class="stem"></div>
+            <div class="label-no">いいえ</div>
+            <div class="stem-arrow"></div>
+            <div class="stem-to-next"></div>
+        </div>
+
+        <!-- Q9 -> Q10 -->
+        <div class="step">
+            <div class="q-text">Q9: 消費税を将来的にでも0％にしてほしい</div>
+            <div class="stem"></div>
+            <div class="flex-container">
+                <div class="branch-unit" style="height: 180px; align-items: flex-start;">
+                    <div class="horizontal-line" style="margin-top: 20px;"></div>
+                    <span class="label-yes" style="margin-top: 12px;">はい</span><span class="arrow-text"
+                        style="margin-top: 12px;">→</span>
+
+                    <!-- Nested Q10 -->
+                    <div class="step" style="margin-top: 5px;">
+                        <div class="q-text" style="font-size: 16px; padding: 5px 0;">Q10: 今すぐ消費税は0％にすべきだ</div>
+                        <div class="stem" style="height: 20px; margin-left: 20px;"></div>
+                        <div class="branch-unit" style="margin-left: 20px;">
+                            <div class="horizontal-line"></div>
+                            <span class="label-yes">はい</span><span class="arrow-text">→</span><span
+                                class="result-text reiwa">れいわ新選組</span>
+                        </div>
+                        <div class="stem" style="height: 20px; margin-left: 20px;"></div>
+                        <div class="label-no" style="margin-left: 0; padding-left: 30px;">いいえ</div>
+                        <div class="stem" style="height: 20px; margin-left: 20px;"></div>
+                        <div class="branch-unit" style="margin-left: 20px; height: 30px; margin-top: -10px;">
+                            <div class="horizontal-line"></div><span class="arrow-text"
+                                style="margin-left: 10px;">→</span><span class="result-text kokumin">国民民主党</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stem"></div>
+            <div class="label-no">いいえ</div>
+            <div class="stem-to-next"></div>
+        </div>
+
+        <!-- Q11 -->
+        <div class="step">
+            <div class="q-text">Q11: デジタル/社会効率化が一番大事だ</div>
+            <div class="stem"></div>
+            <div class="branch-unit">
+                <div class="horizontal-line"></div>
+                <span class="label-yes">はい</span><span class="arrow-text">→</span><span
+                    class="result-text mirai">チームみらい</span>
+            </div>
+            <div class="stem"></div>
+            <div class="label-no">いいえ</div>
+            <div class="stem-to-next"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="step">
+            <div class="q-text">Q12: 私の生活は幸せです</div>
+            <div class="stem"></div>
+            <div class="branch-unit">
+                <div class="horizontal-line"></div>
+                <span class="label-yes">はい</span><span class="arrow-text">→</span>
+                <div class="final-box" style="border-color: #10b981; color: #166534; background-color: #f0fdf4;">与党系に投票
+                </div>
+            </div>
+            <div class="stem"></div>
+            <div class="label-no">いいえ</div>
+            <div class="stem" style="height: 20px;"></div>
+            <div class="branch-unit" style="margin-top: -20px;">
+                <div class="horizontal-line"></div><span class="arrow-text" style="margin-left: 10px;">→</span>
+                <div class="final-box" style="border-color: #3b82f6; color: #1e40af; background-color: #eff6ff;">野党系に投票
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
