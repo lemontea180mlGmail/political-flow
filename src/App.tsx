@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronRight, RefreshCcw, CheckCircle2, Building2, Wallet, Map, Users, Heart } from 'lucide-react'
+import { ChevronRight, RefreshCcw, CheckCircle2, Building2 } from 'lucide-react'
 import flowchartData from './data/flowchart.json'
 
 interface Option {
